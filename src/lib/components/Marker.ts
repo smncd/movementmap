@@ -2,6 +2,7 @@ import * as L from 'leaflet';
 import truncate from '../utils/truncate';
 import IconSVG from '../../images/icon.png';
 import markerIcon from '../../../node_modules/@fortawesome/fontawesome-free/svgs/solid/map-marker-alt.svg';
+import clockIcon from '../../../node_modules/@fortawesome/fontawesome-free/svgs/solid/clock.svg';
 
 export interface MarkerOptions {
   id: number | string;
@@ -72,7 +73,10 @@ export class Marker extends L.Marker {
       id,
       title,
       description,
-      location: { address },
+      location: {
+        address,
+        time: { start, end },
+      },
     } = this.markerData;
 
     const html = `
@@ -81,11 +85,21 @@ export class Marker extends L.Marker {
         ${
           address
             ? `
-            <h4 class="leaflet-popup-content__address">
+            <p class="leaflet-popup-content__address">
               ${markerIcon}
               <span class="screen-reader-text">Address</span> 
               ${address}
-            </h4>`
+            </p>`
+            : ``
+        }
+        ${
+          start
+            ? `
+            <p class="leaflet-popup-content__time">
+              ${clockIcon}
+              <time>${start}</time>
+              ${end ? ` - <time>${end && end}</time>` : ``}
+            </p>`
             : ``
         }
         ${

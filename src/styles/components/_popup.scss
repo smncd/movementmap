@@ -11,17 +11,19 @@
       margin: 15px 0;
     }
 
-    &__address {
+    &__address,
+    &__time {
       margin: 10px 0;
       display: flex;
       align-items: center;
       font-size: 16px;
       line-height: 18px;
+      font-weight: 600;
 
       & svg {
-        margin-right: 2px;
-        width: 16px;
-        height: 16px;
+        margin-right: 4px;
+        width: 15px;
+        height: 15px;
       }
     }
 
