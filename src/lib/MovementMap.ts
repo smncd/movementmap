@@ -1,4 +1,5 @@
 import * as L from 'leaflet';
+import { Tiles } from './layers/Tiles';
 
 export class MovementMap {
   constructor() {
@@ -7,13 +8,10 @@ export class MovementMap {
       zoom: 3,
     });
 
-    L.tileLayer(
-      'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-      {
-        maxZoom: 19,
-        attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      }
-    ).addTo(map);
+    new Tiles('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(map);
   }
 }
