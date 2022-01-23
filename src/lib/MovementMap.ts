@@ -1,6 +1,17 @@
 import * as L from 'leaflet';
 import { Tiles } from './layers/Tiles';
 
+export interface MovementMapOptions extends L.MapOptions {
+  controls?: {
+    zoom?: boolean;
+    attribution?: boolean;
+  };
+  tiles?: {
+    url: string;
+    options: L.TileLayerOptions;
+  };
+}
+
 export class MovementMap {
   constructor() {
     const map = L.map('map', {
