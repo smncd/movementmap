@@ -1,9 +1,11 @@
 @import '../../node_modules/leaflet/dist/leaflet.css';
 
-/* Overwriting Leaflet styles
------------------------------------------------------------*/
-@import 'leaflet';
+.leaflet-container {
+  /* Overwriting Leaflet styles
+  -----------------------------------------------------------*/
+  @import 'leaflet';
 
-/* Controls
------------------------------------------------------------*/
-@import 'controls/controls';
+  /* Controls
+  -----------------------------------------------------------*/
+  @import 'controls/controls';
+}
