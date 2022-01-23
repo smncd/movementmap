@@ -87,7 +87,7 @@ export class Marker extends L.Marker {
             ? `
             <p class="leaflet-popup-content__address">
               ${markerIcon}
-              <span class="screen-reader-text">Address</span> 
+              <span class="screen-reader-text">Address:&nbsp;</span> 
               ${address}
             </p>`
             : ``
@@ -106,7 +106,7 @@ export class Marker extends L.Marker {
           description
             ? `
             <p class="leaflet-popup-content__description">
-              <span class="screen-reader-text">Description</span> 
+              <span class="screen-reader-text">Description:&nbsp;</span> 
               ${truncate(description as string, 400, '...')}
             </p>`
             : ``
