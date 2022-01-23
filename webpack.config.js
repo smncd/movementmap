@@ -40,8 +40,8 @@ module.exports = {
         test: /\.(jpe?g|png)$/,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/[hash][ext][query]'
-        }
+          filename: 'assets/[hash][ext][query]',
+        },
       },
       {
         test: /\.svg$/,
@@ -55,8 +55,7 @@ module.exports = {
   output: {
     filename: 'map.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath:
-      process.env.NODE_ENV === 'production' ? 'auto' : '/dist',
+    publicPath: process.env.NODE_ENV === 'production' ? 'auto' : '/',
   },
   devServer: {
     static: {
