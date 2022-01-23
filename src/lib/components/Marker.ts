@@ -1,4 +1,5 @@
 import * as L from 'leaflet';
+import truncate from '../utils/truncate';
 import IconSVG from '../../images/icon.png';
 import markerIcon from '../../../node_modules/@fortawesome/fontawesome-free/svgs/solid/map-marker-alt.svg';
 
@@ -92,7 +93,7 @@ export class Marker extends L.Marker {
             ? `
             <p class="leaflet-popup-content__description">
               <span class="screen-reader-text">Description</span> 
-              ${description}
+              ${truncate(description as string, 400, '...')}
             </p>`
             : ``
         }
