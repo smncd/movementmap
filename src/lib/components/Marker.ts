@@ -44,6 +44,8 @@ export function isMarkerData(
 }
 
 export class Marker extends L.Marker {
+  private markerData: MarkerOptions;
+
   constructor(markerData: MarkerOptions, markerIcon?: string) {
     const { lat, lon } = markerData.location.coordinates;
 
@@ -58,6 +60,20 @@ export class Marker extends L.Marker {
 
     super(latlon, { icon });
 
-    this.bindPopup(`<h1>${markerData.title}</h1>`);
+    this.markerData = markerData;
+
+    this.markerPopup();
+  }
+
+  private markerPopup() {
+    const { title } = this.markerData;
+
+    const html = `
+      <article>
+        <h1>${title}</h1>
+      </article>
+    `;
+
+    return this.bindPopup(html);
   }
 }
