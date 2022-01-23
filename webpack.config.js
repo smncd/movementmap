@@ -7,7 +7,7 @@ module.exports = {
   entry: './src/main.ts',
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'map.css',
+      filename: 'movementmap.css',
     }),
     new CssMinimizerPlugin(),
   ],
@@ -53,7 +53,7 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js', '.scss', '.css'],
   },
   output: {
-    filename: 'map.js',
+    filename: 'movementmap.js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: process.env.NODE_ENV === 'production' ? 'auto' : '/',
   },

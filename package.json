@@ -5,7 +5,7 @@
   "description": "",
   "author": "Simon Lagerlöf Petéus <contact@twentyonepenguins.xyz>",
   "license": "BSD-3-Clause",
-  "main": "dist/main.js",
+  "main": "dist/movementmap.js",
   "scripts": {
     "dev": "concurrently 'webpack serve' 'onchange \"**/*\" --exclude-path .gitignore -- prettier --write --ignore-unknown {{changed}}'",
     "build": "NODE_ENV=production webpack"
