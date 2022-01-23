@@ -1,6 +1,9 @@
 @import '../../node_modules/leaflet/dist/leaflet.css';
 
-.leaflet-container {
-  height: 100%;
-  width: 100%;
-}
+/* Overwriting Leaflet styles
+-----------------------------------------------------------*/
+@import 'leaflet';
+
+/* Controls
+-----------------------------------------------------------*/
+// @import 'controls/controls';
