@@ -6,5 +6,8 @@
   "author": "Simon Lagerlöf Petéus <contact@twentyonepenguins.xyz>",
   "license": "BSD-3-Clause",
   "main": "dist/main.js",
-  "scripts": {}
+  "scripts": {},
+  "devDependencies": {
+    "typescript": "^4.5.5"
+  }
 }
