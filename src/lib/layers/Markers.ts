@@ -1,21 +1,36 @@
 import * as L from 'leaflet';
-import { Marker } from '../components/Marker';
+import {
+  Marker,
+  MarkerOptions,
+  isMarkerData,
+} from '../components/Marker';
 
 export class Markers {
   url: string;
+  markerData: Array<MarkerOptions>;
 
   constructor(url: string) {
     this.url = url;
   }
 
-  addTo(map: L.Map | L.LayerGroup) {
-    fetch(this.url)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        data.map((marker: any) => {
-          return new Marker(marker).addTo(map);
-        });
+  private async fetchData(url: string) {
+    const res = await fetch(url);
+    const data = await res.json();
+
+    if (!isMarkerData(data[0])) {
+      console.error('Invalid data provided');
+      return;
+    }
+
+    this.markerData = data;
+  }
+
+  async addTo(map: L.Map | L.LayerGroup) {
+    await this.fetchData(this.url);
+
+    this.markerData &&
+      this.markerData.map((marker: MarkerOptions) => {
+        return new Marker(marker).addTo(map);
       });
   }
 }
