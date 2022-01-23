@@ -36,6 +36,7 @@ export class MovementMap {
 
   constructor(
     element: string | HTMLElement,
+    url: string,
     options?: MovementMapOptions
   ) {
     if (options) {
