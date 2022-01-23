@@ -75,6 +75,7 @@ export class Marker extends L.Marker {
       description,
       location: {
         address,
+        day,
         time: { start, end },
       },
     } = this.markerData;
@@ -93,12 +94,16 @@ export class Marker extends L.Marker {
             : ``
         }
         ${
-          start
+          start || day
             ? `
             <p class="leaflet-popup-content__time">
               ${clockIcon}
-              <time>${start}</time>
-              ${end ? ` - <time>${end && end}</time>` : ``}
+              <span class="screen-reader-text">Time:&nbsp;</span> 
+              ${day ? day : ``}${day && start ? `,&nbsp;` : ``}
+              ${start ? `<time>${start ? start : ``}</time>` : ``}
+              ${
+                start && end ? `&nbsp;-&nbsp;<time>${end}</time>` : ``
+              }
             </p>`
             : ``
         }
