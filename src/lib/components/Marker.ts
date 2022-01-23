@@ -26,6 +26,20 @@ export interface MarkerOptions {
   };
 }
 
+export function isMarkerData(
+  object: unknown
+): object is MarkerOptions {
+  const hasProperties = (keys: Array<unknown>) => {
+    let hasProperties = true;
+    keys.forEach((key) => {
+      if (!Object.prototype.hasOwnProperty.call(object, key))
+        hasProperties = false;
+    });
+    return hasProperties;
+  };
+  return hasProperties(['id', 'title', 'location']);
+}
+
 export class Marker extends L.Marker {
   constructor(markerData: MarkerOptions, markerIcon?: string) {
     const { lat, lon } = markerData.location.coordinates;
