@@ -1,4 +1,5 @@
 import * as L from 'leaflet';
+import { ZoomControls } from './controls/Zoom';
 import { Tiles } from './layers/Tiles';
 
 export interface MovementMapOptions extends L.MapOptions {
@@ -49,5 +50,11 @@ export class MovementMap {
       this.options.tiles.url,
       this.options.tiles.options
     ).addTo(map);
+
+    this.options.controls.zoom &&
+      new ZoomControls({
+        center: this.options.center,
+        zoom: this.options.zoom,
+      }).addTo(map);
   }
 }
