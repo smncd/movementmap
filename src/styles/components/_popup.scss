@@ -1,0 +1,39 @@
+.leaflet-popup {
+  &-content-wrapper {
+  }
+
+  &-content {
+    min-width: 120px;
+    min-height: 90px;
+
+    &__title {
+      font-size: 22px;
+      margin: 15px 0;
+    }
+
+    &__address {
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      line-height: 18px;
+
+      & svg {
+        margin-right: 2px;
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    &__description {
+    }
+
+    & article {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &-close-button {
+  }
+}

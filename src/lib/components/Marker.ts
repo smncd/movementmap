@@ -1,5 +1,6 @@
 import * as L from 'leaflet';
 import IconSVG from '../../images/icon.png';
+import markerIcon from '../../../node_modules/@fortawesome/fontawesome-free/svgs/solid/map-marker-alt.svg';
 
 export interface MarkerOptions {
   id: number | string;
@@ -66,11 +67,35 @@ export class Marker extends L.Marker {
   }
 
   private markerPopup() {
-    const { title } = this.markerData;
+    const {
+      id,
+      title,
+      description,
+      location: { address },
+    } = this.markerData;
 
     const html = `
-      <article>
-        <h1>${title}</h1>
+      <article id="${id}">
+        <h1 class="leaflet-popup-content__title">${title}</h1>
+        ${
+          address
+            ? `
+            <h4 class="leaflet-popup-content__address">
+              ${markerIcon}
+              <span class="screen-reader-text">Address</span> 
+              ${address}
+            </h4>`
+            : ``
+        }
+        ${
+          description
+            ? `
+            <p class="leaflet-popup-content__description">
+              <span class="screen-reader-text">Description</span> 
+              ${description}
+            </p>`
+            : ``
+        }
       </article>
     `;
 
