@@ -32,15 +32,22 @@ export class MovementMap {
       },
     },
   };
-    const map = L.map('map', {
-      center: [37.3, 4.57],
-      zoom: 3,
-    });
 
-    new Tiles('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    }).addTo(map);
+  constructor(
+    element: string | HTMLElement,
+    options?: MovementMapOptions
+  ) {
+    if (options) {
+      Object.entries(options).forEach(([key, value]: any) => {
+        this.options[key] = value;
+      });
+    }
+
+    const map = L.map(element, this.options);
+
+    new Tiles(
+      this.options.tiles.url,
+      this.options.tiles.options
+    ).addTo(map);
   }
 }
