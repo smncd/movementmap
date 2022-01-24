@@ -1,4 +1,5 @@
 import * as L from 'leaflet';
+import buttonIcon from '../../../node_modules/@fortawesome/fontawesome-free/svgs/solid/info-circle.svg';
 
 export class AttributionControl extends L.Control {
   private map: L.Map = null;
@@ -18,9 +19,21 @@ export class AttributionControl extends L.Control {
     this.attribution = attribution;
   }
 
+  private toggleButton() {
+    const button = L.DomUtil.create(
+      'button',
+      `${this.controlName}__button`,
+      this.container
+    );
+
+    button.innerHTML = buttonIcon;
+  }
+
   onAdd(map: L.Map): HTMLElement {
     this.map = map;
     const container = this.container;
+
+    this.toggleButton();
 
     return container;
   }
