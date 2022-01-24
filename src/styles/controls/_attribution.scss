@@ -1,6 +1,7 @@
 .leaflet-control-attribution {
   position: relative;
   margin: 0 10px 10px 0;
+  padding: 0;
   background-color: unset;
 
   &__button {
@@ -28,9 +29,16 @@
   }
 
   &__card {
+    padding: 26px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    transition: all 0.1s ease;
+    transform-origin: 100% 100%;
+
     &--hidden {
       visibility: hidden;
       opacity: 0;
+      transform: scale(0.7);
     }
   }
 }
