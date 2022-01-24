@@ -9,6 +9,12 @@ export class AttributionControl extends L.Control {
     'div',
     `${this.controlName} leaflet-bar`
   );
+  private card: HTMLElement = L.DomUtil.create(
+    'section',
+    `${this.controlName}__card ${this.controlName}__card--hidden`,
+    this.container
+  );
+  private isOpen: boolean = false;
 
   constructor(
     attribution: string,
@@ -29,19 +35,47 @@ export class AttributionControl extends L.Control {
     button.innerHTML = buttonIcon;
     button.title = 'Attribution';
 
+    const show = () => {
+      L.DomUtil.removeClass(
+        this.card,
+        `${this.controlName}__card--hidden`
+      );
+      this.isOpen = true;
+    };
+
+    const hide = () => {
+      L.DomUtil.addClass(
+        this.card,
+        `${this.controlName}__card--hidden`
+      );
+      this.isOpen = false;
+    };
+
     L.DomEvent.on(
       button,
       'mousedown dblclick',
       L.DomEvent.stopPropagation
     )
       .on(button, 'click', L.DomEvent.stop)
-      .on(button, 'click', () => console.log('button pressed'), this);
+      .on(
+        button,
+        'click',
+        () => (!this.isOpen ? show() : hide()),
+        this
+      );
+  }
+
+  private cardContent() {
+    this.card.innerHTML = 'ATTRIBUTION';
+
+    return this.card;
   }
 
   onAdd(map: L.Map): HTMLElement {
     this.map = map;
     const container = this.container;
 
+    this.cardContent();
     this.button();
 
     return container;
