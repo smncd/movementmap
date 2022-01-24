@@ -7,7 +7,7 @@ export class AttributionControl extends L.Control {
   private controlName = 'leaflet-control-attribution';
   private container: HTMLElement = L.DomUtil.create(
     'div',
-    `${this.controlName} leaflet-bar`
+    this.controlName
   );
   private card: HTMLElement = L.DomUtil.create(
     'section',
