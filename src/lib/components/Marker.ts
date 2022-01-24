@@ -74,24 +74,35 @@ export class Marker extends L.Marker {
   }
 
   private markerPopup() {
-    const {
-      id,
-      title,
-      description,
-      location: {
-        address,
-        day,
-        time: { start, end },
-      },
-      contact: { email, website, instagram, facebook, twitter },
-    } = this.markerData;
+    const { id, title, description, location, contact } =
+      this.markerData;
 
     const contactItems = [
-      { title: 'Email', url: `mailto:${email}`, icon: emailIcon },
-      { title: 'Website', url: website, icon: websiteIcon },
-      { title: 'Instagram', url: instagram, icon: instagramIcon },
-      { title: 'Facebook', url: facebook, icon: facebookIcon },
-      { title: 'Twitter', url: twitter, icon: twitterIcon },
+      {
+        title: 'Email',
+        url: `mailto:${contact?.email}`,
+        icon: emailIcon,
+      },
+      {
+        title: 'Website',
+        url: contact?.website,
+        icon: websiteIcon,
+      },
+      {
+        title: 'Instagram',
+        url: contact?.instagram,
+        icon: instagramIcon,
+      },
+      {
+        title: 'Facebook',
+        url: contact?.facebook,
+        icon: facebookIcon,
+      },
+      {
+        title: 'Twitter',
+        url: contact?.twitter,
+        icon: twitterIcon,
+      },
     ]
       .map((contactItem) => {
         return contactItem.url && contactItem.url !== 'mailto:'
@@ -115,25 +126,35 @@ export class Marker extends L.Marker {
       <article id="${id}">
         <h1 class="leaflet-popup-content__title">${title}</h1>
         ${
-          address
+          location?.address
             ? `
             <p class="leaflet-popup-content__address">
               ${markerIcon}
               <span class="screen-reader-text">Address:&nbsp;</span> 
-              ${address}
+              ${location?.address}
             </p>`
             : ``
         }
         ${
-          start || day
+          location?.time?.start || location?.day
             ? `
             <p class="leaflet-popup-content__time">
               ${clockIcon}
               <span class="screen-reader-text">Time:&nbsp;</span> 
-              ${day ? day : ``}${day && start ? `,&nbsp;` : ``}
-              ${start ? `<time>${start ? start : ``}</time>` : ``}
+              ${location?.day ? location?.day : ``}${
+                location?.day && location?.time?.start
+                  ? `,&nbsp;`
+                  : ``
+              }
               ${
-                start && end ? `&nbsp;-&nbsp;<time>${end}</time>` : ``
+                location?.time?.start
+                  ? `<time>${location?.time?.start}</time>`
+                  : ``
+              }
+              ${
+                location?.time?.start && location?.time?.end
+                  ? `&nbsp;-&nbsp;<time>${location?.time?.end}</time>`
+                  : ``
               }
             </p>`
             : ``
@@ -148,7 +169,11 @@ export class Marker extends L.Marker {
             : ``
         }
         ${
-          email || website || instagram || facebook || twitter
+          contact?.email ||
+          contact?.website ||
+          contact?.instagram ||
+          contact?.facebook ||
+          contact?.twitter
             ? `
             <div class="leaflet-popup-content__contact">
               <h2>Contact</h2>
