@@ -1,0 +1,19 @@
+@import '../../node_modules/leaflet/dist/leaflet.css';
+
+.leaflet-container {
+  /* Global
+  -----------------------------------------------------------*/
+  @import 'global';
+
+  /* Overwriting Leaflet styles
+  -----------------------------------------------------------*/
+  @import 'leaflet';
+
+  /* Controls
+  -----------------------------------------------------------*/
+  @import 'controls/controls';
+
+  /* Components
+  -----------------------------------------------------------*/
+  @import 'components/components';
+}

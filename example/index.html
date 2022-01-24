@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>MovementMap</title>
+    <link rel="stylesheet" href="movementmap.css" />
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .wrapper {
+        height: 600px;
+        width: 1000px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="map"></div>
+    </div>
+    <script src="movementmap.js"></script>
+    <script>
+      new MovementMap('map', 'capitals.json');
+    </script>
+  </body>
+</html>
