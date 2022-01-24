@@ -1,6 +1,7 @@
-.leaflet-container {
+& {
   height: 100%;
   width: 100%;
+  font-family: inherit;
 }
 
 .leaflet-touch {
