@@ -19,7 +19,7 @@ export class AttributionControl extends L.Control {
     this.attribution = attribution;
   }
 
-  private toggleButton() {
+  private button() {
     const button = L.DomUtil.create(
       'button',
       `${this.controlName}__button`,
@@ -27,13 +27,22 @@ export class AttributionControl extends L.Control {
     );
 
     button.innerHTML = buttonIcon;
+    button.title = 'Attribution';
+
+    L.DomEvent.on(
+      button,
+      'mousedown dblclick',
+      L.DomEvent.stopPropagation
+    )
+      .on(button, 'click', L.DomEvent.stop)
+      .on(button, 'click', () => console.log('button pressed'), this);
   }
 
   onAdd(map: L.Map): HTMLElement {
     this.map = map;
     const container = this.container;
 
-    this.toggleButton();
+    this.button();
 
     return container;
   }
