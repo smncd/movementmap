@@ -1,6 +1,8 @@
 # MovementMap
 
-#### Version: 0.1.0
+#### Version: 0.1.1
+
+#### [Changelog](./CHANGELOG.md)
 
 A interactive map based on [Leaflet](https://leafletjs.com), built for the climate movement.
 
