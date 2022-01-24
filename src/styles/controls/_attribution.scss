@@ -1,8 +1,12 @@
 .leaflet-control-attribution {
+  position: relative;
   margin: 0 10px 10px 0;
   background-color: unset;
 
   &__button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
     padding: 4px;
     border: 0;
     border-radius: 100%;
@@ -25,7 +29,8 @@
 
   &__card {
     &--hidden {
-      display: none;
+      visibility: hidden;
+      opacity: 0;
     }
   }
 }
