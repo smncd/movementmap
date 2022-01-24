@@ -54,7 +54,10 @@ module.exports = {
   },
   output: {
     filename: 'movementmap.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(
+      __dirname,
+      process.env.NODE_ENV === 'production' ? 'dist' : 'dist-dev'
+    ),
     publicPath: process.env.NODE_ENV === 'production' ? 'auto' : '/',
   },
   devServer: {
