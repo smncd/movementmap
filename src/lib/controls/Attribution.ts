@@ -1,5 +1,6 @@
 import * as L from 'leaflet';
 import buttonIcon from '../../../node_modules/@fortawesome/fontawesome-free/svgs/solid/info-circle.svg';
+import closeIcon from '../../../node_modules/@fortawesome/fontawesome-free/svgs/solid/times-circle.svg';
 
 export class AttributionControl extends L.Control {
   private map: L.Map = null;
@@ -40,6 +41,7 @@ export class AttributionControl extends L.Control {
         this.card,
         `${this.controlName}__card--hidden`
       );
+      button.innerHTML = closeIcon;
       this.isOpen = true;
     };
 
@@ -48,6 +50,7 @@ export class AttributionControl extends L.Control {
         this.card,
         `${this.controlName}__card--hidden`
       );
+      button.innerHTML = buttonIcon;
       this.isOpen = false;
     };
 
