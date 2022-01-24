@@ -3,6 +3,11 @@ import truncate from '../utils/truncate';
 import IconSVG from '../../images/icon.png';
 import markerIcon from '../../../node_modules/@fortawesome/fontawesome-free/svgs/solid/map-marker-alt.svg';
 import clockIcon from '../../../node_modules/@fortawesome/fontawesome-free/svgs/solid/clock.svg';
+import emailIcon from '../../../node_modules/@fortawesome/fontawesome-free/svgs/solid/envelope.svg';
+import websiteIcon from '../../../node_modules/@fortawesome/fontawesome-free/svgs/solid/globe.svg';
+import instagramIcon from '../../../node_modules/@fortawesome/fontawesome-free/svgs/brands/instagram.svg';
+import facebookIcon from '../../../node_modules/@fortawesome/fontawesome-free/svgs/brands/facebook.svg';
+import twitterIcon from '../../../node_modules/@fortawesome/fontawesome-free/svgs/brands/twitter.svg';
 
 export interface MarkerOptions {
   id: number | string;
@@ -78,7 +83,33 @@ export class Marker extends L.Marker {
         day,
         time: { start, end },
       },
+      contact: { email, website, instagram, facebook, twitter },
     } = this.markerData;
+
+    const contactItems = [
+      { title: 'Email', url: `mailto:${email}`, icon: emailIcon },
+      { title: 'Website', url: website, icon: websiteIcon },
+      { title: 'Instagram', url: instagram, icon: instagramIcon },
+      { title: 'Facebook', url: facebook, icon: facebookIcon },
+      { title: 'Twitter', url: twitter, icon: twitterIcon },
+    ]
+      .map((contactItem) => {
+        return contactItem.url && contactItem.url !== 'mailto:'
+          ? `
+        <li class="leaflet-popup-content__contact-item">
+          <a
+            title="${contactItem.title}"
+            href="${contactItem.url}"
+            target="blank"
+            rel="noreferrer noopener"
+          >
+            ${contactItem.icon}
+            <span class="screen-reader-text">${contactItem.title}</span>
+          </a>
+        </li>`
+          : ``;
+      })
+      .join('');
 
     const html = `
       <article id="${id}">
@@ -114,6 +145,17 @@ export class Marker extends L.Marker {
               <span class="screen-reader-text">Description:&nbsp;</span> 
               ${truncate(description as string, 400, '...')}
             </p>`
+            : ``
+        }
+        ${
+          email || website || instagram || facebook || twitter
+            ? `
+            <div class="leaflet-popup-content__contact">
+              <h2>Contact</h2>
+              <ul class="leaflet-popup-content__contact-list">
+                ${contactItems}
+              </ul>
+            </div>`
             : ``
         }
       </article>
