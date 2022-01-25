@@ -23,7 +23,7 @@ export class MovementMap {
     minZoom: 1,
     zoomControl: false,
     attributionControl: false,
-    gestureHandling: true,
+    gestureHandling: window.innerWidth < 768 ? true : false,
     controls: {
       zoom: true,
       attribution: true,
