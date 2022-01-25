@@ -2,6 +2,7 @@
   position: relative;
   margin: 0 10px 10px 0;
   padding: 0;
+  max-width: 100%;
   background-color: unset;
   border-radius: 15px;
 
@@ -35,7 +36,7 @@
     display: flex;
     align-items: center;
     background-color: #ffffff;
-    overflow: hidden;
+    overflow-x: scroll;
     transition: all 0.3s cubic-bezier(0.65, 0, 0, 1);
 
     & > p {

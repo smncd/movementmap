@@ -54,7 +54,15 @@ export class AttributionControl extends L.Control {
     button.title = 'Attribution';
 
     const show = () => {
-      this.card.style.width = `${this.content.clientWidth}px`;
+      const parentWidth =
+        this.content.parentElement.parentElement.parentElement
+          .parentElement.clientWidth - 20;
+
+      if (this.content.clientWidth > parentWidth) {
+        this.card.style.width = `${parentWidth}px`;
+      } else if (this.content.clientWidth < parentWidth) {
+        this.card.style.width = `${this.content.clientWidth}px`;
+      }
 
       L.DomUtil.removeClass(
         this.card,
