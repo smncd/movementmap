@@ -2,12 +2,13 @@
   height: 100%;
   width: 100%;
   font-family: inherit;
-}
 
-.leaflet-touch {
-  & .leaflet-bar,
-  & .leaflet-control-layers {
-    border: unset;
-    box-shadow: 0 0.8px 20px 0.8px #00000021;
+  &.leaflet-touch {
+    & .leaflet-bar,
+    & .leaflet-control,
+    & .leaflet-control-layers {
+      border: unset;
+      box-shadow: 0 0.8px 20px 0.8px #00000021;
+    }
   }
 }

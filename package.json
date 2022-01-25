@@ -1,6 +1,6 @@
 {
   "name": "movementmap",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "private": true,
   "description": "",
   "author": "Simon Lagerlöf Petéus <contact@twentyonepenguins.xyz>",
@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
-    "leaflet": "^1.7.1"
+    "leaflet": "^1.7.1",
+    "leaflet-gesture-handling": "^1.2.2"
   }
 }

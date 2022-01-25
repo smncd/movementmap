@@ -1,4 +1,6 @@
 import * as L from 'leaflet';
+import { GestureHandling } from 'leaflet-gesture-handling';
+import { AttributionControl } from './controls/Attribution';
 import { ZoomControls } from './controls/Zoom';
 import { Markers } from './layers/Markers';
 import { Tiles } from './layers/Tiles';
@@ -21,6 +23,7 @@ export class MovementMap {
     minZoom: 1,
     zoomControl: false,
     attributionControl: false,
+    gestureHandling: window.innerWidth < 768 ? true : false,
     controls: {
       zoom: true,
       attribution: true,
@@ -46,6 +49,12 @@ export class MovementMap {
       });
     }
 
+    L.Map.addInitHook(
+      'addHandler',
+      'gestureHandling',
+      GestureHandling
+    );
+
     const map = L.map(element, this.options);
 
     new Tiles(
@@ -58,6 +67,11 @@ export class MovementMap {
         center: this.options.center,
         zoom: this.options.zoom,
       }).addTo(map);
+
+    this.options.controls.attribution &&
+      new AttributionControl(
+        this.options.tiles.options.attribution
+      ).addTo(map);
 
     new Markers(url).addTo(map);
   }

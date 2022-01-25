@@ -1,5 +1,5 @@
 /* @preserve
- * MovementMap 0.1.1
+ * MovementMap 0.2.0
  *
  * A interactive map for the climate movement based on Leaflet (https://leafletjs.com)
  */
