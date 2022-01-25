@@ -1,4 +1,5 @@
 import * as L from 'leaflet';
+import { AttributionControl } from './controls/Attribution';
 import { ZoomControls } from './controls/Zoom';
 import { Markers } from './layers/Markers';
 import { Tiles } from './layers/Tiles';
@@ -58,6 +59,11 @@ export class MovementMap {
         center: this.options.center,
         zoom: this.options.zoom,
       }).addTo(map);
+
+    this.options.controls.attribution &&
+      new AttributionControl(
+        this.options.tiles.options.attribution
+      ).addTo(map);
 
     new Markers(url).addTo(map);
   }
