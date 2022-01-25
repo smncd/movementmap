@@ -15,6 +15,11 @@ export class AttributionControl extends L.Control {
     `${this.controlName}__card ${this.controlName}__card--hidden`,
     this.container
   );
+  private content: HTMLElement = L.DomUtil.create(
+    'p',
+    `${this.controlName}__content`,
+    this.card
+  );
   private isOpen: boolean = false;
 
   constructor(
@@ -24,6 +29,18 @@ export class AttributionControl extends L.Control {
     super(options);
 
     this.attribution = attribution;
+  }
+
+  private cardContent() {
+    this.content.innerHTML = `
+      <b>MovementMap</b>
+       | 
+      <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>
+       | 
+      ${this.attribution}
+    `;
+
+    return this.card;
   }
 
   private button() {
@@ -66,20 +83,6 @@ export class AttributionControl extends L.Control {
         () => (!this.isOpen ? show() : hide()),
         this
       );
-  }
-
-  private cardContent() {
-    this.card.innerHTML = `
-      <p>
-        <b>MovementMap</b>
-         | 
-        <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>
-         | 
-        ${this.attribution}
-      </p>
-    `;
-
-    return this.card;
   }
 
   onAdd(map: L.Map): HTMLElement {
