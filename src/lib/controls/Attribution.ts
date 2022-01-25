@@ -69,7 +69,15 @@ export class AttributionControl extends L.Control {
   }
 
   private cardContent() {
-    this.card.innerHTML = 'ATTRIBUTION';
+    this.card.innerHTML = `
+      <p>
+        <b>MovementMap</b>
+         | 
+        <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>
+         | 
+        ${this.attribution}
+      </p>
+    `;
 
     return this.card;
   }
