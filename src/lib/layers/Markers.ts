@@ -9,7 +9,7 @@ export class Markers {
   url: string;
   markerData: Array<MarkerOptions>;
 
-  constructor(url: string) {
+  constructor(url: string, clustering: boolean) {
     this.url = url;
   }
 
