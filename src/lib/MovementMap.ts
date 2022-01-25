@@ -1,4 +1,5 @@
 import * as L from 'leaflet';
+import { GestureHandling } from 'leaflet-gesture-handling';
 import { AttributionControl } from './controls/Attribution';
 import { ZoomControls } from './controls/Zoom';
 import { Markers } from './layers/Markers';
@@ -22,6 +23,7 @@ export class MovementMap {
     minZoom: 1,
     zoomControl: false,
     attributionControl: false,
+    gestureHandling: true,
     controls: {
       zoom: true,
       attribution: true,
@@ -46,6 +48,12 @@ export class MovementMap {
         this.options[key] = value;
       });
     }
+
+    L.Map.addInitHook(
+      'addHandler',
+      'gestureHandling',
+      GestureHandling
+    );
 
     const map = L.map(element, this.options);
 
