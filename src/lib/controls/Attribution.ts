@@ -54,10 +54,13 @@ export class AttributionControl extends L.Control {
     button.title = 'Attribution';
 
     const show = () => {
+      this.card.style.width = `${this.content.clientWidth}px`;
+
       L.DomUtil.removeClass(
         this.card,
         `${this.controlName}__card--hidden`
       );
+
       button.innerHTML = closeIcon;
       this.isOpen = true;
     };
@@ -67,6 +70,9 @@ export class AttributionControl extends L.Control {
         this.card,
         `${this.controlName}__card--hidden`
       );
+
+      this.card.style.width = ``;
+
       button.innerHTML = buttonIcon;
       this.isOpen = false;
     };
