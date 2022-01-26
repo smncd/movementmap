@@ -10,10 +10,12 @@ export class Markers {
   url: string;
   markerData: Array<MarkerOptions>;
   clustering: boolean = true;
+  customIcon: string;
 
-  constructor(url: string, clustering: boolean) {
+  constructor(url: string, clustering: boolean, customIcon: string) {
     this.url = url;
     this.clustering = clustering;
+    this.customIcon = customIcon;
   }
 
   private async fetchData(url: string) {
@@ -43,7 +45,7 @@ export class Markers {
 
     this.markerData &&
       this.markerData.map((markerData: MarkerOptions) => {
-        const marker = new Marker(markerData);
+        const marker = new Marker(markerData, this.customIcon);
 
         return this.clustering
           ? cluster.addLayer(marker)
