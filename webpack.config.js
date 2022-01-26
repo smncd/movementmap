@@ -38,10 +38,7 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png)$/,
-        type: 'asset/resource',
-        generator: {
-          filename: 'assets/[hash][ext][query]',
-        },
+        type: 'asset/inline',
       },
       {
         test: /\.svg$/,

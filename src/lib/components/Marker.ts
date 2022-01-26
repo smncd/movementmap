@@ -80,7 +80,7 @@ export class Marker extends L.Marker {
     const contactItems = [
       {
         title: 'Email',
-        url: `mailto:${contact?.email}`,
+        url: contact?.email && `mailto:${contact?.email}`,
         icon: emailIcon,
       },
       {
@@ -105,7 +105,7 @@ export class Marker extends L.Marker {
       },
     ]
       .map((contactItem) => {
-        return contactItem.url && contactItem.url !== 'mailto:'
+        return contactItem.url
           ? `
         <li class="leaflet-popup-content__contact-item">
           <a
