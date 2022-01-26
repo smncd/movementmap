@@ -31,7 +31,15 @@ export class Markers {
   async addTo(map: L.Map | L.LayerGroup) {
     await this.fetchData(this.url);
 
-    const cluster = new MarkerClusterGroup();
+    const cluster = new MarkerClusterGroup({
+      polygonOptions: {
+        fillColor: '#3887be',
+        color: '#3887be',
+        weight: 3,
+        opacity: 1,
+        fillOpacity: 0.5,
+      },
+    });
 
     this.markerData &&
       this.markerData.map((markerData: MarkerOptions) => {
