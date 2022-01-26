@@ -6,6 +6,7 @@ import { Markers } from './layers/Markers';
 import { Tiles } from './layers/Tiles';
 
 export interface MovementMapOptions extends L.MapOptions {
+  markerIcon: string;
   controls?: {
     zoom?: boolean;
     attribution?: boolean;
@@ -25,6 +26,7 @@ export class MovementMap {
     attributionControl: false,
     gestureHandling: window.innerWidth < 768 ? true : false,
     markerClustering: true,
+    markerIcon: '',
     controls: {
       zoom: true,
       attribution: true,
@@ -74,6 +76,10 @@ export class MovementMap {
         this.options.tiles.options.attribution
       ).addTo(map);
 
-    new Markers(url, this.options.markerClustering).addTo(map);
+    new Markers(
+      url,
+      this.options.markerClustering,
+      this.options.markerIcon
+    ).addTo(map);
   }
 }
