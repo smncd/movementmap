@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.3.0
+
+- Added marker clustering support.
+- Loading image assets linline as base64 to avoid extra files.
+- Added custom marker icon support.
+- Misc. fixes.
+
 ## v0.2.0
 
 - Added popup/card for displaying map attribution.
