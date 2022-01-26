@@ -4,13 +4,16 @@ import {
   MarkerOptions,
   isMarkerData,
 } from '../components/Marker';
+import { MarkerClusterGroup } from 'leaflet.markercluster';
 
 export class Markers {
   url: string;
   markerData: Array<MarkerOptions>;
+  clustering: boolean = true;
 
   constructor(url: string, clustering: boolean) {
     this.url = url;
+    this.clustering = clustering;
   }
 
   private async fetchData(url: string) {
@@ -28,9 +31,17 @@ export class Markers {
   async addTo(map: L.Map | L.LayerGroup) {
     await this.fetchData(this.url);
 
+    const cluster = new MarkerClusterGroup();
+
     this.markerData &&
-      this.markerData.map((marker: MarkerOptions) => {
-        return new Marker(marker).addTo(map);
+      this.markerData.map((markerData: MarkerOptions) => {
+        const marker = new Marker(markerData);
+
+        return this.clustering
+          ? cluster.addLayer(marker)
+          : marker.addTo(map);
       });
+
+    this.clustering && map.addLayer(cluster);
   }
 }
