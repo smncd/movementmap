@@ -1,0 +1,52 @@
+.marker-cluster {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-clip: padding-box;
+  border-radius: 20px;
+  overflow: hidden;
+
+  background-color: #ffffff90;
+
+  & div {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: inherit;
+    align-items: inherit;
+    border-radius: inherit;
+
+    background-color: white;
+
+    & span {
+      font-size: 14px;
+      font-weight: 700;
+    }
+  }
+
+  &-small {
+    background-color: #52ddb690;
+
+    & div {
+      background-color: #52ddb6;
+    }
+  }
+
+  &-medium {
+    background-color: #448eba90;
+
+    & div {
+      background-color: #448eba;
+      color: #ffffff;
+    }
+  }
+
+  &-large {
+    background-color: #3d55c290;
+
+    & div {
+      background-color: #3d55c2;
+      color: #ffffff;
+    }
+  }
+}

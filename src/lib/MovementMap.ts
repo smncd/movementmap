@@ -24,6 +24,7 @@ export class MovementMap {
     zoomControl: false,
     attributionControl: false,
     gestureHandling: window.innerWidth < 768 ? true : false,
+    markerClustering: true,
     controls: {
       zoom: true,
       attribution: true,
@@ -73,6 +74,6 @@ export class MovementMap {
         this.options.tiles.options.attribution
       ).addTo(map);
 
-    new Markers(url).addTo(map);
+    new Markers(url, this.options.markerClustering).addTo(map);
   }
 }

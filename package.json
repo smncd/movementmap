@@ -32,6 +32,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "leaflet": "^1.7.1",
-    "leaflet-gesture-handling": "^1.2.2"
+    "leaflet-gesture-handling": "^1.2.2",
+    "leaflet.markercluster": "^1.5.3"
   }
 }
