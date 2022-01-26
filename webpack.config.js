@@ -56,6 +56,7 @@ module.exports = {
       process.env.NODE_ENV === 'production' ? 'dist' : 'dist-dev'
     ),
     publicPath: process.env.NODE_ENV === 'production' ? 'auto' : '/',
+    clean: true,
   },
   devServer: {
     static: {
