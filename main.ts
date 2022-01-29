@@ -4,7 +4,7 @@
  * A interactive map for the climate movement based on Leaflet (https://leafletjs.com)
  */
 
-import { MovementMap } from './lib/MovementMap';
+import { MovementMap } from './src/lib/MovementMap';
 import './styles/main.scss';
 
 declare global {
