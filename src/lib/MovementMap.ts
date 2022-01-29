@@ -6,6 +6,8 @@ import { Markers } from './layers/Markers';
 import { Tiles } from './layers/Tiles';
 
 export interface MovementMapOptions extends L.MapOptions {
+  gestureHandling: boolean;
+  markerClustering: boolean;
   markerIcon: string;
   controls?: {
     zoom?: boolean;
