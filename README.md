@@ -73,11 +73,20 @@ Next, you need to initiate a map, as shown below. Make sure the script in which 
 
 The MovementMap class needs several parameters to function:
 
-| key     | types                                          | purpose                                                                              |
-| ------- | ---------------------------------------------- | ------------------------------------------------------------------------------------ |
-| element | string \| HTMLElement                          | The id of the element in which the map will be rendered.                             |
-| url     | string                                         | The URL of your data API. Look under [requirements](#requirements) to see structure. |
-| options | [MovementMapOptions](./src/lib/MovementMap.ts) | Options to customize map.                                                            |
+| key                      | types   | optional | purpose                                                                                                                  |
+| ------------------------ | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------ |
+| element                  | string  | no       | The id of the element in which the map will be rendered.                                                                 |
+| url                      | string  | no       | The URL of your data API. Look under [requirements](#requirements) to see structure.                                     |
+| options                  | object  | yes      | Options to customize map. Extends the default leaflet options, only ones that apply to MovementMap will be covered here. |
+| options.center           | array   | yes      | Default geographical position. ([[lat, lon]](https://leafletjs.com/reference.html#latlng))                               |
+| options.zoom             | number  | yes      | Default zoom level.                                                                                                      |
+| options.zoomControl      | boolean | yes      | Enable or disable zoom control. Note that this is not the default Leaflet zoomcontrol, rather a custom one.              |
+| options.gestureHandling  | boolean | yes      | Enable the [gesture handling plugin](https://github.com/elmarquis/Leaflet.GestureHandling/)                              |
+| options.markerClustering | boolean | yes      | Enable [marker clustering](https://github.com/Leaflet/Leaflet.markercluster/) when zoomed out                            |
+| options.markerIcon       | string  | yes      | Link a custom marker icon (png/svg image). The image file must be 86x125px.                                              |
+| options.tiles            | object  | yes      | Customize map tiles                                                                                                      |
+| options.tiles.url        | string  | yes      | Tiles url                                                                                                                |
+| options.tiles.options    | object  | yes      | The default [Leaflet TileLayer](https://leafletjs.com/reference.html#tilelayer)                                          |
 
 ## Development
 
