@@ -13,28 +13,28 @@ Any data displayed on the map needs to follow this format:
 ```JSON
 [
   {
-    "id": number|string,
-    "slug": string,
-    "title": string,
-    "description"?: string,
+    "id": "number|string",
+    "slug": "string",
+    "title": "string",
+    "description": "(optional) string",
     "location": {
-      "address"?: string,
-      "day"?: string,
-      "time"?: {
-        "start"?: string,
-        "end"?: string
+      "address": "(optional) string",
+      "day": "(optional) string",
+      "time": {
+        "start": "(optional) string",
+        "end": "(optional) string"
       },
       "coordinates": {
-        "lat": number|string,
-        "lon": number|string
+        "lat": "number|string",
+        "lon": "number|string"
       }
     },
-    "contact"?: {
-      "email"?:string,
-      "website"?: string,
-      "instagram"?: string,
-      "facebook"?: string,
-      "twitter"?: string
+    "contact": {
+      "email": "string",
+      "website": "(optional) string",
+      "instagram": "(optional) string",
+      "facebook": "(optional) string",
+      "twitter": "(optional) string"
     }
   }
 ]
