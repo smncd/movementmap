@@ -5,7 +5,7 @@
  */
 
 import { MovementMap } from './src/MovementMap';
-import './styles/main.scss';
+import './src/styles/main.scss';
 
 declare global {
   interface Window {
