@@ -1,6 +1,6 @@
 import * as L from 'leaflet';
-import buttonIcon from '../../../node_modules/@fortawesome/fontawesome-free/svgs/solid/info-circle.svg';
-import closeIcon from '../../../node_modules/@fortawesome/fontawesome-free/svgs/solid/times-circle.svg';
+import buttonIcon from '../../node_modules/@fortawesome/fontawesome-free/svgs/solid/info-circle.svg';
+import closeIcon from '../../node_modules/@fortawesome/fontawesome-free/svgs/solid/times-circle.svg';
 
 export class AttributionControl extends L.Control {
   private map: L.Map = null;
