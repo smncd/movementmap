@@ -9,10 +9,6 @@ export interface MovementMapOptions extends L.MapOptions {
   gestureHandling: boolean;
   markerClustering: boolean;
   markerIcon: string;
-  controls?: {
-    zoom?: boolean;
-    attribution?: boolean;
-  };
   tiles?: {
     url: string;
     options: L.TileLayerOptions;
@@ -24,15 +20,11 @@ export class MovementMap {
     center: [37.3, 4.57],
     zoom: 3,
     minZoom: 1,
-    zoomControl: false,
-    attributionControl: false,
+    zoomControl: true,
+    attributionControl: true,
     gestureHandling: window.innerWidth < 768 ? true : false,
     markerClustering: true,
     markerIcon: '',
-    controls: {
-      zoom: true,
-      attribution: true,
-    },
     tiles: {
       url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       options: {
@@ -71,13 +63,13 @@ export class MovementMap {
       this.options.tiles.options
     ).addTo(map);
 
-    this.options.controls.zoom &&
+    this.options.zoomControl &&
       new ZoomControls({
         center: this.options.center,
         zoom: this.options.zoom,
       }).addTo(map);
 
-    this.options.controls.attribution &&
+    this.options.attributionControl &&
       new AttributionControl(
         this.options.tiles.options.attribution
       ).addTo(map);
