@@ -60,7 +60,11 @@ export class MovementMap {
       GestureHandling
     );
 
-    const map = L.map(element, this.options);
+    const map = L.map(element, {
+      ...this.options,
+      zoomControl: false,
+      attributionControl: false,
+    });
 
     new Tiles(
       this.options.tiles.url,
