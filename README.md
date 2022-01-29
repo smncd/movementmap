@@ -40,8 +40,6 @@ Any data displayed on the map needs to follow this format:
 ]
 ```
 
-_A '?' after the key name means the key is optional, and does not need to be included_
-
 ## Installation
 
 In order to use MovementMap, download the files in the [dist](./dist) folder, and include `movementmap.css` and `movementmap.js` in your site's `<head>` and `<body>`, as shown below.
