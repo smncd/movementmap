@@ -86,6 +86,15 @@ Any data displayed on the map needs to follow this format:
 ]
 ```
 
+## Languages
+MovementMap relies your document's `lang` attribute to display strings in different languages.   
+If not available, it will fall back to english.
+
+### Currently supporter languages are:
+
+- English
+- Swedish
+
 ## Development
 
 ### Requirements
