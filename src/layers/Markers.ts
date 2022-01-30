@@ -1,9 +1,6 @@
 import * as L from 'leaflet';
-import {
-  Marker,
-  MarkerOptions,
-  isMarkerData,
-} from '../components/Marker';
+import { Marker, MarkerOptions } from '../components/Marker';
+import isMarkerData from '../utils/isMarkerData';
 import { MarkerClusterGroup } from 'leaflet.markercluster';
 
 export class Markers {
