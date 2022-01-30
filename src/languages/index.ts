@@ -23,6 +23,13 @@ export interface Language {
 }
 
 function __(reqGroup: string, reqString: string): string {
+  let lang = document.documentElement.lang ?? 'en';
+
+  if (lang.length > 2) {
+    lang = lang.split(lang[2])[0];
+  }
+
+  console.log(lang);
   return '';
 }
 
