@@ -21,3 +21,9 @@ export interface Language {
     };
   };
 }
+
+function __(reqGroup: string, reqString: string): string {
+  return '';
+}
+
+export default __;
