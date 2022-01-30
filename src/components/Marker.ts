@@ -8,6 +8,7 @@ import websiteIcon from '../../node_modules/@fortawesome/fontawesome-free/svgs/s
 import instagramIcon from '../../node_modules/@fortawesome/fontawesome-free/svgs/brands/instagram.svg';
 import facebookIcon from '../../node_modules/@fortawesome/fontawesome-free/svgs/brands/facebook.svg';
 import twitterIcon from '../../node_modules/@fortawesome/fontawesome-free/svgs/brands/twitter.svg';
+import __ from '../languages';
 
 export interface MarkerOptions {
   id: number | string;
@@ -62,12 +63,12 @@ export class Marker extends L.Marker {
 
     const contactItems = [
       {
-        title: 'Email',
+        title: __('popup', 'email'),
         url: contact?.email && `mailto:${contact?.email}`,
         icon: emailIcon,
       },
       {
-        title: 'Website',
+        title: __('popup', 'website'),
         url: contact?.website,
         icon: websiteIcon,
       },
@@ -113,7 +114,10 @@ export class Marker extends L.Marker {
             ? `
             <p class="leaflet-popup-content__address">
               ${markerIcon}
-              <span class="screen-reader-text">Address:&nbsp;</span> 
+              <span class="screen-reader-text">${__(
+                'popup',
+                'address'
+              )}:&nbsp;</span> 
               ${location?.address}
             </p>`
             : ``
@@ -123,7 +127,10 @@ export class Marker extends L.Marker {
             ? `
             <p class="leaflet-popup-content__time">
               ${clockIcon}
-              <span class="screen-reader-text">Time:&nbsp;</span> 
+              <span class="screen-reader-text">${__(
+                'popup',
+                'time'
+              )}:&nbsp;</span> 
               ${location?.day ? location?.day : ``}${
                 location?.day && location?.time?.start
                   ? `,&nbsp;`
@@ -146,7 +153,10 @@ export class Marker extends L.Marker {
           description
             ? `
             <p class="leaflet-popup-content__description">
-              <span class="screen-reader-text">Description:&nbsp;</span> 
+              <span class="screen-reader-text">${__(
+                'popup',
+                'description'
+              )}:&nbsp;</span> 
               ${truncate(description as string, 400, '...')}
             </p>`
             : ``
@@ -159,7 +169,7 @@ export class Marker extends L.Marker {
           contact?.twitter
             ? `
             <div class="leaflet-popup-content__contact">
-              <h2>Contact</h2>
+              <h2>${__('popup', 'contact')}</h2>
               <ul class="leaflet-popup-content__contact-list">
                 ${contactItems}
               </ul>
