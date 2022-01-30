@@ -33,9 +33,11 @@ function __(reqGroup: string, reqString: string): string {
     languages.find((language) => language.language === lang) ??
     languages[0];
 
-  console.log(language);
+  const group = language.groups[reqGroup as keyof Object];
 
-  return '';
+  const string = group[reqString as keyof Object] ?? '';
+
+  return string as string;
 }
 
 export default __;
