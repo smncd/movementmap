@@ -2,6 +2,7 @@ import * as L from 'leaflet';
 import zoomInIcon from '@fortawesome/fontawesome-free/svgs/solid/plus.svg';
 import zoomOutIcon from '@fortawesome/fontawesome-free/svgs/solid/minus.svg';
 import resetZoomIcon from '@fortawesome/fontawesome-free/svgs/solid/globe-americas.svg';
+import __ from '../languages';
 
 export interface ZoomControlsProps {
   center: L.LatLngExpression;
@@ -72,7 +73,7 @@ export class ZoomControls extends L.Control {
 
     this.createButton(
       zoomInIcon as string,
-      'Zoom In',
+      __('zoom', 'in'),
       `${controlName}__button ${controlName}__button--in`,
       container,
       this.zoomIn
@@ -80,7 +81,7 @@ export class ZoomControls extends L.Control {
 
     this.createButton(
       resetZoomIcon,
-      'Default Zoom',
+      __('zoom', 'reset'),
       `${controlName}__button ${controlName}__button--reset`,
       container,
       this.resetZoom
@@ -88,7 +89,7 @@ export class ZoomControls extends L.Control {
 
     this.createButton(
       zoomOutIcon,
-      'Zoom Out',
+      __('zoom', 'out'),
       `${controlName}__button ${controlName}__button--out`,
       container,
       this.zoomOut

@@ -15,7 +15,7 @@
 
     &__address,
     &__time {
-      margin: 10px 0;
+      margin: 10px 0 !important;
       display: flex;
       align-items: center;
       font-size: 16px;
@@ -35,7 +35,7 @@
     }
 
     &__contact {
-      & h3 {
+      & h2 {
         font-size: 20px;
       }
 
@@ -52,6 +52,12 @@
         width: 30px;
         height: 30px;
         list-style: none;
+
+        &::before,
+        &::after {
+          content: '';
+          display: none;
+        }
 
         & svg {
           width: 100%;

@@ -4,7 +4,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
   mode: process.env.NODE_ENV || 'production',
-  entry: './src/main.ts',
+  entry: './main.ts',
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'movementmap.css',
@@ -56,6 +56,7 @@ module.exports = {
       process.env.NODE_ENV === 'production' ? 'dist' : 'dist-dev'
     ),
     publicPath: process.env.NODE_ENV === 'production' ? 'auto' : '/',
+    clean: true,
   },
   devServer: {
     static: {

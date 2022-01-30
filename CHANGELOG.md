@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.4.0
+
+- Added support for languages
+- Updated documentation.
+- Misc. fixes and improvements.
+
 ## v0.3.0
 
 - Added marker clustering support.

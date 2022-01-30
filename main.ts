@@ -1,11 +1,11 @@
 /* @preserve
- * MovementMap 0.3.0
+ * MovementMap 0.4.0
  *
  * A interactive map for the climate movement based on Leaflet (https://leafletjs.com)
  */
 
-import { MovementMap } from './lib/MovementMap';
-import './styles/main.scss';
+import { MovementMap } from './src/MovementMap';
+import './src/styles/main.scss';
 
 declare global {
   interface Window {

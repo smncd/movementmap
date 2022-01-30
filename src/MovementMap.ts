@@ -6,11 +6,9 @@ import { Markers } from './layers/Markers';
 import { Tiles } from './layers/Tiles';
 
 export interface MovementMapOptions extends L.MapOptions {
-  markerIcon: string;
-  controls?: {
-    zoom?: boolean;
-    attribution?: boolean;
-  };
+  gestureHandling?: boolean;
+  markerClustering?: boolean;
+  markerIcon?: string;
   tiles?: {
     url: string;
     options: L.TileLayerOptions;
@@ -18,19 +16,14 @@ export interface MovementMapOptions extends L.MapOptions {
 }
 
 export class MovementMap {
-  private options: any = {
+  private options: MovementMapOptions = {
     center: [37.3, 4.57],
     zoom: 3,
     minZoom: 1,
-    zoomControl: false,
-    attributionControl: false,
+    zoomControl: true,
     gestureHandling: window.innerWidth < 768 ? true : false,
     markerClustering: true,
     markerIcon: '',
-    controls: {
-      zoom: true,
-      attribution: true,
-    },
     tiles: {
       url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       options: {
@@ -47,8 +40,8 @@ export class MovementMap {
     options?: MovementMapOptions
   ) {
     if (options) {
-      Object.entries(options).forEach(([key, value]: any) => {
-        this.options[key] = value;
+      Object.entries(options).forEach(([key, value]) => {
+        this.options[key as keyof Object] = value;
       });
     }
 
@@ -58,23 +51,26 @@ export class MovementMap {
       GestureHandling
     );
 
-    const map = L.map(element, this.options);
+    const map = L.map(element, {
+      ...this.options,
+      zoomControl: false,
+      attributionControl: false,
+    });
 
     new Tiles(
       this.options.tiles.url,
       this.options.tiles.options
     ).addTo(map);
 
-    this.options.controls.zoom &&
+    this.options.zoomControl &&
       new ZoomControls({
         center: this.options.center,
         zoom: this.options.zoom,
       }).addTo(map);
 
-    this.options.controls.attribution &&
-      new AttributionControl(
-        this.options.tiles.options.attribution
-      ).addTo(map);
+    new AttributionControl(
+      this.options.tiles.options.attribution
+    ).addTo(map);
 
     new Markers(
       url,

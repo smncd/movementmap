@@ -41,10 +41,15 @@
     transition: all 0.3s cubic-bezier(0.65, 0, 0, 1);
 
     & > p {
-      margin: 0;
+      margin: 0 !important;
       padding: 0 35px 0 15px;
+      font-size: 12px;
       white-space: nowrap;
       transition: inherit;
+
+      & a {
+        font-size: inherit;
+      }
     }
 
     &--hidden {
