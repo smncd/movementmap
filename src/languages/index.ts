@@ -22,7 +22,9 @@ export interface Language {
   };
 }
 
-function __(reqGroup: string, reqString: string): string {
+export type ReqGroup = 'zoom' | 'attribution' | 'popup';
+
+function __(reqGroup: ReqGroup, reqString: string): string {
   let lang = document.documentElement.lang ?? 'en';
 
   if (lang.length > 2) {
