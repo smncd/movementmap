@@ -19,5 +19,26 @@
         "website": "Website"
       }
     }
+  },
+  {
+    "language": "sv",
+    "groups": {
+      "zoom": {
+        "in": "Zooma in",
+        "out": "Zooma ut",
+        "reset": "Återställ zoom"
+      },
+      "attribution": {
+        "title": "Attribuering"
+      },
+      "popup": {
+        "address": "Adress",
+        "time": "Tid",
+        "description": "Beskrivning",
+        "contact": "Kontakt",
+        "email": "Epost",
+        "website": "Webbplats"
+      }
+    }
   }
 ]
