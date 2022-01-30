@@ -29,7 +29,12 @@ function __(reqGroup: string, reqString: string): string {
     lang = lang.split(lang[2])[0];
   }
 
-  console.log(lang);
+  const language: Language =
+    languages.find((language) => language.language === lang) ??
+    languages[0];
+
+  console.log(language);
+
   return '';
 }
 
