@@ -16,7 +16,7 @@ export interface MovementMapOptions extends L.MapOptions {
 }
 
 export class MovementMap {
-  private options: any = {
+  private options: MovementMapOptions = {
     center: [37.3, 4.57],
     zoom: 3,
     minZoom: 1,
@@ -40,8 +40,8 @@ export class MovementMap {
     options?: MovementMapOptions
   ) {
     if (options) {
-      Object.entries(options).forEach(([key, value]: any) => {
-        this.options[key] = value;
+      Object.entries(options).forEach(([key, value]) => {
+        this.options[key as keyof Object] = value;
       });
     }
 
