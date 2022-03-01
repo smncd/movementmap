@@ -7,7 +7,7 @@
   "license": "BSD-3-Clause",
   "main": "dist/movementmap.js",
   "scripts": {
-    "dev": "concurrently 'NODE_ENV=development webpack serve' 'onchange \"**/*\" --exclude-path .gitignore -- prettier --write --ignore-unknown {{changed}}'",
+    "dev": "concurrently 'NODE_ENV=development webpack serve' 'onchange \"**/*\" --exclude-path .prettierignore -- prettier --write --ignore-unknown {{changed}}'",
     "build": "webpack",
     "build:production": "NODE_ENV=production webpack"
   },
