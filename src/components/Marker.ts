@@ -55,6 +55,14 @@ export class Marker extends L.Marker {
     this.markerData = markerData;
 
     this.markerPopup();
+
+    /**
+     * A bug in Leaflet 1.7.1 requires a long click to open popups in Safari.
+     * Therefore we "manually" open the popup when the marker is clicked.
+     *
+     * @link https://github.com/Leaflet/Leaflet/issues/7331
+     */
+    this.on('click', () => this.openPopup());
   }
 
   private markerPopup() {
