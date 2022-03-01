@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.4.1
+
+- Fixed marker popups not opening in Safari.
+- Misc. style fixes.
+- DX improvements.
+
 ## v0.4.0
 
 - Added support for languages
