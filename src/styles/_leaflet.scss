@@ -4,6 +4,10 @@
   font-family: inherit;
   z-index: 1;
 
+  &::after {
+    text-align: center;
+  }
+
   &.leaflet-touch {
     & .leaflet-bar,
     & .leaflet-control,

@@ -40,6 +40,10 @@
     scrollbar-width: none;
     transition: all 0.3s cubic-bezier(0.65, 0, 0, 1);
 
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
     & > p {
       margin: 0 !important;
       padding: 0 35px 0 15px;

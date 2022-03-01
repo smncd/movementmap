@@ -1,6 +1,6 @@
 import * as L from 'leaflet';
 import truncate from '../utils/truncate';
-import IconSVG from '../images/icon.png';
+import iconImg from '../images/icon.png';
 import markerIcon from '../../node_modules/@fortawesome/fontawesome-free/svgs/solid/map-marker-alt.svg';
 import clockIcon from '../../node_modules/@fortawesome/fontawesome-free/svgs/solid/clock.svg';
 import emailIcon from '../../node_modules/@fortawesome/fontawesome-free/svgs/solid/envelope.svg';
@@ -44,7 +44,7 @@ export class Marker extends L.Marker {
     const latlon: L.LatLngExpression = [lat, lon];
 
     const icon = L.icon({
-      iconUrl: markerIcon ? markerIcon : IconSVG,
+      iconUrl: markerIcon ? markerIcon : iconImg,
       iconSize: [36, 55],
       iconAnchor: [18, 54],
       popupAnchor: [0, -35],
@@ -55,6 +55,14 @@ export class Marker extends L.Marker {
     this.markerData = markerData;
 
     this.markerPopup();
+
+    /**
+     * A bug in Leaflet 1.7.1 requires a long click to open popups in Safari.
+     * Therefore we "manually" open the popup when the marker is clicked.
+     *
+     * @link https://github.com/Leaflet/Leaflet/issues/7331
+     */
+    this.on('click', () => this.openPopup());
   }
 
   private markerPopup() {
