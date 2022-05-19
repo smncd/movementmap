@@ -3,6 +3,7 @@
 ## next
 
 - Using Leaflet version to 1.8.
+- Misc. cleaning.
 
 ## v0.4.1
 
