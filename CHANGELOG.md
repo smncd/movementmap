@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.5.0
+
+- Using Leaflet version to 1.8.
+- Misc. cleaning.
+
 ## v0.4.1
 
 - Fixed marker popups not opening in Safari.
