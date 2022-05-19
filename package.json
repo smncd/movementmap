@@ -8,8 +8,9 @@
   "main": "dist/movementmap.js",
   "scripts": {
     "dev": "concurrently 'NODE_ENV=development webpack serve' 'onchange \"**/*\" --exclude-path .prettierignore -- prettier --write --ignore-unknown {{changed}}'",
-    "build": "webpack",
-    "build:production": "NODE_ENV=production webpack"
+    "build": "tsc && webpack",
+    "build:production": "tsc && NODE_ENV=production webpack",
+    "typecheck": "tsc"
   },
   "devDependencies": {
     "@types/leaflet": "^1.7.10",
