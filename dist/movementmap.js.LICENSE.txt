@@ -1,10 +1,10 @@
 /* @preserve
- * Leaflet 1.7.1, a JS library for interactive maps. http://leafletjs.com
- * (c) 2010-2019 Vladimir Agafonkin, (c) 2010-2011 CloudMade
+ * Leaflet 1.8.0, a JS library for interactive maps. https://leafletjs.com
+ * (c) 2010-2022 Vladimir Agafonkin, (c) 2010-2011 CloudMade
  */
 
 /* @preserve
- * MovementMap 0.4.1
+ * MovementMap 0.5.0
  *
  * A interactive map for the climate movement based on Leaflet (https://leafletjs.com)
  */
