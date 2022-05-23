@@ -8,9 +8,9 @@
   "main": "src/main.ts",
   "scripts": {
     "dev": "concurrently 'NODE_ENV=development webpack serve' 'onchange \"**/*\" --exclude-path .prettierignore -- prettier --write --ignore-unknown {{changed}}'",
-    "build": "tsc && webpack",
-    "build:production": "tsc && NODE_ENV=production webpack",
-    "typecheck": "tsc"
+    "build": "tsc --noEmit && webpack",
+    "build:production": "tsc --noEmit && NODE_ENV=production webpack",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/leaflet": "^1.7.10",
