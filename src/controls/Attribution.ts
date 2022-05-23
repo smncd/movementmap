@@ -7,7 +7,7 @@ export class AttributionControl extends L.Control {
   private map: L.Map = null;
   private attribution: string = null;
   private controlName = 'leaflet-control-attribution';
-  private container: HTMLElement = L.DomUtil.create(
+  private container: HTMLDivElement = L.DomUtil.create(
     'div',
     this.controlName
   );
@@ -16,7 +16,7 @@ export class AttributionControl extends L.Control {
     `${this.controlName}__card ${this.controlName}__card--hidden`,
     this.container
   );
-  private content: HTMLElement = L.DomUtil.create(
+  private content: HTMLParagraphElement = L.DomUtil.create(
     'p',
     `${this.controlName}__content`,
     this.card
