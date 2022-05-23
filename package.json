@@ -35,5 +35,13 @@
     "leaflet": "^1.8.0",
     "leaflet-gesture-handling": "^1.2.2",
     "leaflet.markercluster": "^1.5.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:twentyonepenguins/movementmap.git"
+  },
+  "bugs": {
+    "url": "https://github.com/twentyonepenguins/movementmap/issues"
+  },
+  "homepage": "https://github.com/twentyonepenguins/movementmap#readme"
 }
