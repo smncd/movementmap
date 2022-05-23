@@ -1,5 +1,9 @@
 # Changelog
 
+## next 
+
+- Misc. DX fixes.
+
 ## 0.5.0
 
 - Using Leaflet version to 1.8.
