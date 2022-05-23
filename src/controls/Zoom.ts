@@ -47,7 +47,7 @@ export class ZoomControls extends L.Control {
     container: HTMLElement,
     onClick: any
   ) {
-    const button = L.DomUtil.create('button', className, container);
+    const button: HTMLButtonElement = L.DomUtil.create('button', className, container);
     button.innerHTML = html;
     button.title = title;
 
