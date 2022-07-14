@@ -1,6 +1,11 @@
 # Changelog
 
-## 0.5.0
+## v0.6.0 
+
+- Using Vitejs instead of Webpack.
+- Misc. DX fixes.
+
+## v0.5.0
 
 - Using Leaflet version to 1.8.
 - Misc. cleaning.

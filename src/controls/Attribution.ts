@@ -1,13 +1,13 @@
 import * as L from 'leaflet';
-import buttonIcon from '../../node_modules/@fortawesome/fontawesome-free/svgs/solid/info-circle.svg';
-import closeIcon from '../../node_modules/@fortawesome/fontawesome-free/svgs/solid/times-circle.svg';
+import buttonIcon from '../../node_modules/@fortawesome/fontawesome-free/svgs/solid/info-circle.svg?raw';
+import closeIcon from '../../node_modules/@fortawesome/fontawesome-free/svgs/solid/times-circle.svg?raw';
 import __ from '../languages';
 
 export class AttributionControl extends L.Control {
   private map: L.Map = null;
   private attribution: string = null;
   private controlName = 'leaflet-control-attribution';
-  private container: HTMLElement = L.DomUtil.create(
+  private container: HTMLDivElement = L.DomUtil.create(
     'div',
     this.controlName
   );
@@ -16,7 +16,7 @@ export class AttributionControl extends L.Control {
     `${this.controlName}__card ${this.controlName}__card--hidden`,
     this.container
   );
-  private content: HTMLElement = L.DomUtil.create(
+  private content: HTMLParagraphElement = L.DomUtil.create(
     'p',
     `${this.controlName}__content`,
     this.card
@@ -34,7 +34,7 @@ export class AttributionControl extends L.Control {
 
   private cardContent() {
     this.content.innerHTML = `
-      <b>MovementMap v0.5.0</b>
+      <b>MovementMap v0.6.0</b>
        | 
       <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>
        | 
