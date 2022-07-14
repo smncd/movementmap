@@ -1,7 +1,7 @@
 import * as L from 'leaflet';
-import zoomInIcon from '@fortawesome/fontawesome-free/svgs/solid/plus.svg';
-import zoomOutIcon from '@fortawesome/fontawesome-free/svgs/solid/minus.svg';
-import resetZoomIcon from '@fortawesome/fontawesome-free/svgs/solid/globe-americas.svg';
+import zoomInIcon from '@fortawesome/fontawesome-free/svgs/solid/plus.svg?raw';
+import zoomOutIcon from '@fortawesome/fontawesome-free/svgs/solid/minus.svg?raw';
+import resetZoomIcon from '@fortawesome/fontawesome-free/svgs/solid/globe-americas.svg?raw';
 import __ from '../languages';
 
 export interface ZoomControlsProps {
