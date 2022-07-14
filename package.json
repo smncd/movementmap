@@ -7,10 +7,8 @@
   "license": "BSD-3-Clause",
   "main": "src/main.ts",
   "scripts": {
-    "vite":"vite",
-    "dev": "concurrently 'NODE_ENV=development webpack serve' 'onchange \"**/*\" --exclude-path .prettierignore -- prettier --write --ignore-unknown {{changed}}'",
-    "build": "tsc --noEmit && webpack",
-    "build:production": "tsc --noEmit && NODE_ENV=production webpack",
+    "dev": "concurrently \"vite dev\" \"onchange \"**/*\" --exclude-path .gitignore -- prettier --write --ignore-unknown {{changed}}\"",
+    "build": "tsc --noEmit && vite build --mode production",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
