@@ -34,7 +34,7 @@ export class AttributionControl extends L.Control {
 
   private cardContent() {
     this.content.innerHTML = `
-      <b>MovementMap v0.5.0</b>
+      <b>MovementMap v0.6.0</b>
        | 
       <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>
        | 
