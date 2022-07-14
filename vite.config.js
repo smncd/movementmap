@@ -2,6 +2,9 @@ import { defineConfig } from 'vite';
 import path from 'path';
 
 export default defineConfig({
+  server: {
+    port: 9000
+  },
   build: {
     minify: 'terser',
     lib: {
