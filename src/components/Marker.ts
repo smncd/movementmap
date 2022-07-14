@@ -1,13 +1,13 @@
 import * as L from 'leaflet';
 import truncate from '../utils/truncate';
 import iconImg from '../images/icon.png';
-import markerIcon from '../../node_modules/@fortawesome/fontawesome-free/svgs/solid/map-marker-alt.svg';
-import clockIcon from '../../node_modules/@fortawesome/fontawesome-free/svgs/solid/clock.svg';
-import emailIcon from '../../node_modules/@fortawesome/fontawesome-free/svgs/solid/envelope.svg';
-import websiteIcon from '../../node_modules/@fortawesome/fontawesome-free/svgs/solid/globe.svg';
-import instagramIcon from '../../node_modules/@fortawesome/fontawesome-free/svgs/brands/instagram.svg';
-import facebookIcon from '../../node_modules/@fortawesome/fontawesome-free/svgs/brands/facebook.svg';
-import twitterIcon from '../../node_modules/@fortawesome/fontawesome-free/svgs/brands/twitter.svg';
+import markerIcon from '../../node_modules/@fortawesome/fontawesome-free/svgs/solid/map-marker-alt.svg?raw';
+import clockIcon from '../../node_modules/@fortawesome/fontawesome-free/svgs/solid/clock.svg?raw';
+import emailIcon from '../../node_modules/@fortawesome/fontawesome-free/svgs/solid/envelope.svg?raw';
+import websiteIcon from '../../node_modules/@fortawesome/fontawesome-free/svgs/solid/globe.svg?raw';
+import instagramIcon from '../../node_modules/@fortawesome/fontawesome-free/svgs/brands/instagram.svg?raw';
+import facebookIcon from '../../node_modules/@fortawesome/fontawesome-free/svgs/brands/facebook.svg?raw';
+import twitterIcon from '../../node_modules/@fortawesome/fontawesome-free/svgs/brands/twitter.svg?raw';
 import __ from '../languages';
 
 export interface MarkerOptions {
