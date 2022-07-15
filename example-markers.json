@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "slug": "stockholm",
+    "title": "Stockholm",
+    "location": {
+      "coordinates": {
+        "lat": "59.332691",
+        "lon": "18.064341"
+      }
+    }
+  },
+  {
+    "id": 2,
+    "slug": "cairo",
+    "title": "Cairo",
+    "location": {
+      "coordinates": {
+        "lat": "30.044420",
+        "lon": "31.235712"
+      }
+    }
+  },
+  {
+    "id": 3,
+    "slug": "new-york",
+    "title": "New York",
+    "location": {
+      "coordinates": {
+        "lat": "40.759010",
+        "lon": "-73.984474"
+      }
+    }
+  },
+  {
+    "id": 4,
+    "slug": "brasilia",
+    "title": "Brasilia",
+    "location": {
+      "coordinates": {
+        "lat": "-15.826691",
+        "lon": "-47.921822"
+      }
+    }
+  },
+  {
+    "id": 5,
+    "slug": "bangkok",
+    "title": "Bangkok",
+    "location": {
+      "coordinates": {
+        "lat": "13.756331",
+        "lon": "100.501762"
+      }
+    }
+  },
+  {
+    "id": 6,
+    "slug": "tokyo",
+    "title": "Tokyo",
+    "location": {
+      "coordinates": {
+        "lat": "35.689487",
+        "lon": "139.691711"
+      }
+    }
+  },
+  {
+    "id": 7,
+    "slug": "lagos",
+    "title": "Lagos",
+    "location": {
+      "coordinates": {
+        "lat": "6.524379",
+        "lon": "3.379206"
+      }
+    }
+  },
+  {
+    "id": 7,
+    "slug": "lusaka",
+    "title": "Lusaka",
+    "location": {
+      "coordinates": {
+        "lat": "-15.419620",
+        "lon": "28.283150"
+      }
+    }
+  },
+  {
+    "id": 8,
+    "slug": "havanna",
+    "title": "Havanna",
+    "location": {
+      "coordinates": {
+        "lat": "23.106345",
+        "lon": "-82.367441"
+      }
+    }
+  },
+  {
+    "id": 9,
+    "slug": "santiago",
+    "title": "Santiago",
+    "location": {
+      "coordinates": {
+        "lat": "-33.452158",
+        "lon": "-70.674093"
+      }
+    }
+  }
+]
